@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="HanziHarbor — Mandarin vocabulary learning platform with interactive flashcards, SRS, and daily practice." />
+  <meta name="theme-color" content="#F6F4EF" />
+  <title>HanziHarbor — Learn Mandarin</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23C84B31'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='18' fill='white' font-family='PingFang SC,sans-serif'%3E%E6%B1%89%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Shared nav: bottom bar on mobile, left sidebar on desktop -->
+    <aside class="sidebar" aria-label="Main navigation">
+      <div class="brand sidebar-brand">
+        <div class="brand-mark">汉</div>
+        <span>HanziHarbor</span>
+      </div>
+
+      <nav class="app-nav">
+        <button class="nav-item active" data-view="home" data-label="Home"></button>
+        <button class="nav-item" data-view="study" data-label="Study"></button>
+        <button class="nav-item" data-view="practice" data-label="Practice"></button>
+        <button class="nav-item" data-view="library" data-label="Words"></button>
+        <button class="nav-item" data-view="progress" data-label="Progress"></button>
+      </nav>
+    </aside>
+
+    <div class="shell">
+      <header class="topbar">
+        <div class="brand topbar-brand">
+          <div class="brand-mark">汉</div>
+          <span>HanziHarbor</span>
+        </div>
+        <div class="topbar-actions">
+          <div class="streak-chip" id="streakChip" title="Daily streak" aria-label="Daily streak">0</div>
+          <button class="icon-btn" id="themeToggle" aria-label="Toggle theme" type="button"></button>
+        </div>
+      </header>
+
+      <main class="main">
+        <section id="view-home" class="view active" aria-label="Home">
+          <div id="homeContent"></div>
+        </section>
+        <section id="view-study" class="view" aria-label="Flashcard">
+          <div id="studyContent"></div>
+        </section>
+        <section id="view-practice" class="view" aria-label="Practice">
+          <div id="practiceContent"></div>
+        </section>
+        <section id="view-library" class="view" aria-label="Library">
+          <div id="libraryContent"></div>
+        </section>
+        <section id="view-progress" class="view" aria-label="Progress">
+          <div id="progressContent"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div id="modalBackdrop" class="modal-backdrop" role="presentation"></div>
+  <div id="toast" class="toast" role="status"></div>
+  <div id="confetti" class="confetti" aria-hidden="true"></div>
+
+  <script src="js/hsk-data.js"></script>
+  <script src="js/srs.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

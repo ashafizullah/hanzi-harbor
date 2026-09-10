@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+
+# Editor / tooling
+.idea/
+.vscode/
+*.swp
+
+# Playwright / agent scratch
+.playwright-cli/
+*.log
+
+# Intermediate downloads (not shipped)
+data/raw/
