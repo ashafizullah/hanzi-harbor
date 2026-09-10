@@ -475,7 +475,7 @@
         <div class="empty">
           <h3>No study session yet</h3>
           <p>Start from the daily session (reviews + new words).</p>
-          <button class="btn btn-primary" id="studyGoDue" style="margin-top:16px">Start session daysan</button>
+          <button class="btn btn-primary" id="studyGoDue" style="margin-top:16px">Start daily session</button>
         </div>`;
       document.getElementById("studyGoDue").onclick = startDailySession;
       return;
@@ -1007,27 +1007,31 @@
       <div class="card" style="margin-top:12px">
         <div class="section-title" style="margin-top:0">Actions</div>
         <div class="btn-row">
-          <button class="btn btn-secondary" id="resetProgress">Reset local progress</button>
+          <button class="btn btn-danger-outline" id="resetProgress">Reset local progress</button>
         </div>
         <p style="color:var(--muted);font-size:12px;margin-top:10px">Data is stored on this device (localStorage).</p>
       </div>
     `;
 
-    document.getElementById("resetProgress").onclick = () => {
-      if (!confirm("Delete all local progress and SRS data?")) return;
+    document.getElementById("resetProgress").onclick = async () => {
+      const ok = await showConfirmModal({
+        title: "Reset all progress?",
+        message: "This will permanently delete your study history, streak, XP, and SRS schedule on this device. This cannot be undone.",
+        confirmLabel: "Delete everything",
+        cancelLabel: "Keep my data",
+        danger: true,
+      });
+      if (!ok) return;
       localStorage.removeItem(PROGRESS_KEY);
-      localStorage.removeItem(SRS_KEY_PLACEHOLDER());
-      localStorage.removeItem(DAILY_KEY);
       localStorage.removeItem("hanziharbor_srs_v1");
+      localStorage.removeItem(DAILY_KEY);
       toast("Progress reset");
       renderProgress();
       renderHome();
     };
   }
 
-  function SRS_KEY_PLACEHOLDER() {
-    return "hanziharbor_srs_v1";
-  }
+
 
   // ── Dictionary modal ─────────────────────────
   function openModal(id) {
@@ -1086,8 +1090,48 @@
 
   function closeModal() {
     const bd = document.getElementById("modalBackdrop");
+    if (state._confirmResolve) {
+      const resolve = state._confirmResolve;
+      state._confirmResolve = null;
+      bd.classList.remove("open");
+      bd.innerHTML = "";
+      resolve(false);
+      return;
+    }
     bd.classList.remove("open");
     bd.innerHTML = "";
+  }
+
+  // In-app confirm dialog (replaces window.confirm)
+  function showConfirmModal({ title, message, confirmLabel = "Confirm", cancelLabel = "Cancel", danger = false }) {
+    return new Promise((resolve) => {
+      const bd = document.getElementById("modalBackdrop");
+      state._confirmResolve = resolve;
+      bd.innerHTML = `
+        <div class="modal modal-confirm" role="alertdialog" aria-modal="true" aria-labelledby="confirmTitle" aria-describedby="confirmMsg">
+          <h3 id="confirmTitle" class="confirm-title">${title}</h3>
+          <p id="confirmMsg" class="confirm-msg">${message}</p>
+          <div class="btn-row confirm-actions">
+            <button class="btn btn-secondary" id="confirmCancel" type="button">${cancelLabel}</button>
+            <button class="btn ${danger ? "btn-danger" : "btn-primary"}" id="confirmOk" type="button">${confirmLabel}</button>
+          </div>
+        </div>`;
+      bd.classList.add("open");
+
+      const done = (val) => {
+        state._confirmResolve = null;
+        bd.classList.remove("open");
+        bd.innerHTML = "";
+        resolve(val);
+      };
+
+      bd.onclick = (e) => {
+        if (e.target === bd) done(false);
+      };
+      document.getElementById("confirmCancel").onclick = () => done(false);
+      document.getElementById("confirmOk").onclick = () => done(true);
+      document.getElementById("confirmOk").focus();
+    });
   }
 
   // ── Init ─────────────────────────────────────
