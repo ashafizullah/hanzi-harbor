@@ -1,0 +1,6 @@
+# Keep deploys small
+data/raw/
+.playwright-cli/
+.git/
+DESIGN.md
+*.log

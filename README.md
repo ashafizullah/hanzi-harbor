@@ -5,6 +5,8 @@
 
 A modern, mobile-friendly Mandarin vocabulary learning app built around **interactive flashcards** and **spaced repetition (SRS)**.
 
+**Live:** [https://mandarin-learn.vercel.app](https://mandarin-learn.vercel.app)
+
 Learn New HSK 3.0 words a little every day — Hanzi first, then meaning & pinyin. Hard cards come back sooner. New words are capped so you never drown in the full list.
 
 **Run it:** open `index.html` in a browser (no build step, works offline after first load).
