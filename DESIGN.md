@@ -1,4 +1,4 @@
-# HanziHarbor — Mandarin Learning Platform
+# Hanzi Harbor — Mandarin Learning Platform
 
 ## Concept
 A calm daily-study app for Mandarin vocabulary. Feels like a modern paper study deck (Anki/Quizlet rigor) with Duolingo-friendly daily rhythm. Not a marketing site — a working product.
