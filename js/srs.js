@@ -1,4 +1,4 @@
-// Spaced repetition (SM-2 inspired) for HanziHarbor
+// Spaced repetition (SM-2 inspired) for Hanzi Harbor
 // status: new | learning | reviewing | mastered | hard
 
 const SRS_KEY = "hanziharbor_srs_v1";

@@ -1,10 +1,13 @@
-# HanziHarbor
+# Hanzi Harbor
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-c84b31.svg)](LICENSE)
+[![New HSK 3.0](https://img.shields.io/badge/HSK-New%203.0-2d6a4f.svg)](https://github.com/drkameleon/complete-hsk-vocabulary)
 
 A modern, mobile-friendly Mandarin vocabulary learning app built around **interactive flashcards** and **spaced repetition (SRS)**.
 
 Learn New HSK 3.0 words a little every day — Hanzi first, then meaning & pinyin. Hard cards come back sooner. New words are capped so you never drown in the full list.
 
-**Live use:** open `index.html` in a browser (no build step, works offline after first load).
+**Run it:** open `index.html` in a browser (no build step, works offline after first load).
 
 **Made with [Xiaomi MiMo Desktop](https://www.mi.com)** — designed, coded, and iterated with MiMo’s desktop agent.
 
@@ -47,18 +50,19 @@ No npm install. No backend. Progress is stored in `localStorage`.
 ## Project structure
 
 ```
-mandarin-learn/
+hanzi-harbor/
   index.html          # App shell
   css/styles.css      # Design system + layout
   js/hsk-data.js      # New HSK 3.0 vocabulary
   js/srs.js           # Spaced repetition engine
   js/app.js           # UI + study / practice logic
   DESIGN.md           # Visual / product design notes
+  LICENSE             # MIT
 ```
 
 ---
 
-## Data sources & license
+## Data sources
 
 | Data | Source |
 |------|--------|
@@ -66,9 +70,37 @@ mandarin-learn/
 | Official HSK 3.0 lists (upstream) | [elkmovie/hsk30](https://github.com/elkmovie/hsk30) |
 | English meanings | [CC-CEDICT](https://www.mdbg.net/chinese/dictionary?page=cc-cedict) via that repository |
 
-Vocabulary dataset: **MIT**.
+Vocabulary dataset is distributed under **MIT** by its upstream authors. See the linked repositories for full notices.
 
-This application’s UI & code: **MIT** — © [bisamandarin.com](https://bisamandarin.com)
+---
+
+## License
+
+This project’s application code and UI are released under the **[MIT License](LICENSE)**.
+
+```
+MIT License
+
+Copyright (c) 2026 bisamandarin.com
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
 
 ---
 
@@ -77,8 +109,6 @@ This application’s UI & code: **MIT** — © [bisamandarin.com](https://bisama
 Built with **Xiaomi MiMo Desktop** (MiMo agent) — from product design and SRS logic to responsive UI, dark mode, and multi-mode practice.
 
 Made by **[bisamandarin.com](https://bisamandarin.com)**.
-
-### Links
 
 | | |
 |---|---|

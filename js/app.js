@@ -1,4 +1,4 @@
-/* HanziHarbor app */
+/* Hanzi Harbor app */
 (function () {
   const VOCAB = window.VOCAB || [];
   const byId = Object.fromEntries(VOCAB.map((v) => [v.id, v]));
