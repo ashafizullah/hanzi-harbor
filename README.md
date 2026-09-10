@@ -77,3 +77,12 @@ This application’s UI & code: **MIT** — © [bisamandarin.com](https://bisama
 Built with **Xiaomi MiMo Desktop** (MiMo agent) — from product design and SRS logic to responsive UI, dark mode, and multi-mode practice.
 
 Made by **[bisamandarin.com](https://bisamandarin.com)**.
+
+### Links
+
+| | |
+|---|---|
+| Xiaomi MiMo (X) | [@XiaomiMiMoDevs](https://x.com/XiaomiMiMoDevs) |
+| Adams Hafizullah (X) | [@adamshafizullah](https://x.com/adamshafizullah) |
+| Adams Hafizullah (LinkedIn) | [linkedin.com/in/adamshafizullah](https://www.linkedin.com/in/adamshafizullah/) |
+| Product | [bisamandarin.com](https://bisamandarin.com) |
